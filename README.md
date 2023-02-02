@@ -1,25 +1,33 @@
 # VIDEOPOSTAPI
 
+Projeto Backend com FastAPI, MongoDB e PyMongo
+Este é um projeto de exemplo de como construir uma API RESTful com FastAPI, MongoDB e PyMongo.
+
 ## Requisitos
-Para usar o projeto, primeiramente você precisa iniciar o aplicação do backEnd, seguindo o README do projeto VideoApi,
-após fazer o upload do video na url http://localhost:8000/docs#/default/add_video_post_posts_post você deve pegar o ID para rodar no FrontEnd
-
+Docker
+Docker Compose
 ## Como executar o projeto
-### Você deve criar uma virtualenv seguindo o seguinte comando
+Clone o repositório:
 
-`python3 -m venv venv`
-### para ativar
+$ git clone https://github.com/seu-usuario/seu-repositorio.git
 
-`source venv/bin/activate`
-### instalar a lib PyQt5
+## Execute o comando abaixo para subir os containers do MongoDB e FastAPI:
 
-`pip install PyQt5`
-# Rodar projeto
+$ docker-compose up -d
 
-`python main.py`
+Acesse o Swagger UI da API em http://localhost:8000/docs para ver a documentação e testar as rotas.
 
+## Para encerrar a execução dos containers, execute:
 
-## Como executar o projeto
-### Após rodar o projeto aparece uma tela onde você deve colocar o ID do video
-### Aperte confirmar
-### após isso aparecera uma tela, clique na pasta no canto esquerdo inferior, basta clicar nela e dar play no video
+$ docker-compose down
+
+# Arquitetura do projeto
+O projeto consiste em duas camadas: API e Banco de Dados.
+
+## API
+A API foi construída com FastAPI e utiliza o PyMongo para se conectar ao MongoDB e realizar as operações no banco.
+
+O Swagger UI é gerado automaticamente com as rotas e descrições definidas na API.
+
+## Banco de Dados
+O banco de dados utilizado é o MongoDB e é gerenciado com o Docker Compose.
